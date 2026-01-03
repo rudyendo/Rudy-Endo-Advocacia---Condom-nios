@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      // Mock process.env for browser compatibility before any module loads
+      window.process = window.process || { env: {} };
+    </script>
     <style>
       body {
         font-family: 'Inter', sans-serif;
@@ -16,39 +20,40 @@
       h1, h2, h3, .font-serif {
         font-family: 'Playfair Display', serif;
       }
-      /* Novas Cores Baseadas no Logotipo Rudy Endo */
-      .bg-brand-red {
-        background-color: #912018;
+      /* Cores do Logotipo Rudy Endo */
+      .bg-brand-red { background-color: #912018; }
+      .text-brand-red { color: #912018; }
+      .border-brand-red { border-color: #912018; }
+      .bg-brand-brown { background-color: #451F19; }
+      .text-brand-brown { color: #451F19; }
+      
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
       }
-      .text-brand-red {
-        color: #912018;
-      }
-      .border-brand-red {
-        border-color: #912018;
-      }
-      .bg-brand-brown {
-        background-color: #451F19;
-      }
-      .text-brand-brown {
-        color: #451F19;
-      }
-      .hover-brand-red:hover {
-        background-color: #7a1b14;
-      }
+      .animate-spin-slow { animation: spin-slow 8s linear infinite; }
     </style>
-  <script type="importmap">
+    <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@1.34.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.462.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "vite": "https://esm.sh/vite@^7.3.0",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+    "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
-</head>
+  </head>
   <body class="bg-slate-50 text-slate-900">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

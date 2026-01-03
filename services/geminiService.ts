@@ -12,7 +12,15 @@ Regras:
 6. Responda em Português do Brasil.`;
 
 export async function getGeminiResponse(prompt: string) {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  // Acesso seguro à chave injetada pelo Vite ou Vercel
+  const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : undefined;
+  
+  if (!apiKey || apiKey === 'undefined') {
+    console.error("ERRO: API_KEY não configurada no ambiente.");
+    return "O assistente jurídico está temporariamente offline. Por favor, utilize o formulário de contato abaixo para falar com o Dr. Rudy Endo.";
+  }
+
+  const ai = new GoogleGenAI({ apiKey });
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
