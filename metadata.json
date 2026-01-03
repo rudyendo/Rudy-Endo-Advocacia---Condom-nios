@@ -1,0 +1,8 @@
+{
+  "name": "Rudy Endo Advocacia - Direito Condominial",
+  "description": "Assessoria jurídica especializada para condomínios e síndicos com 10 anos de experiência sob a liderança do Dr. Rudy Endo.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
