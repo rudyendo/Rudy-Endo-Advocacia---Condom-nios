@@ -12,11 +12,11 @@ Regras:
 6. Responda em Português do Brasil.`;
 
 export async function getGeminiResponse(prompt: string) {
-  // Acesso seguro à chave injetada pelo Vite ou Vercel
-  const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : undefined;
+  // O Vite substituirá 'process.env.API_KEY' pelo valor real definido no Vercel
+  const apiKey = process.env.API_KEY;
   
-  if (!apiKey || apiKey === 'undefined') {
-    console.error("ERRO: API_KEY não configurada no ambiente.");
+  if (!apiKey || apiKey === '' || apiKey === 'undefined') {
+    console.error("ERRO: API_KEY não encontrada nas variáveis de ambiente.");
     return "O assistente jurídico está temporariamente offline. Por favor, utilize o formulário de contato abaixo para falar com o Dr. Rudy Endo.";
   }
 
@@ -33,7 +33,7 @@ export async function getGeminiResponse(prompt: string) {
     });
     return response.text;
   } catch (error) {
-    console.error("Error calling Gemini API:", error);
+    console.error("Erro na API Gemini:", error);
     return "Desculpe, ocorreu um erro ao processar sua solicitação. Por favor, tente novamente ou use o formulário de contato da Rudy Endo Advocacia.";
   }
 }
