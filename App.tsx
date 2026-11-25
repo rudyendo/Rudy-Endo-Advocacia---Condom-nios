@@ -1,187 +1,225 @@
-
 import React, { useEffect, useState } from 'react';
-import { Hero } from './components/Hero';
-import { Services } from './components/Services';
-import { About } from './components/About';
-import { Contact } from './components/Contact';
-import { LeadMagnet } from './components/LeadMagnet';
-import { AIAssistant } from './components/AIAssistant';
-import { AdminPanel } from './components/AdminPanel';
-import { PageContentProvider, usePageContent } from './contexts/PageContentContext';
 import { Menu, X } from 'lucide-react';
+import { BrandLogo } from './components/BrandLogo';
+import { Hero } from './components/Hero';
+import { PainPoints } from './components/PainPoints';
+import { Services } from './components/Services';
+import { HowItWorks } from './components/HowItWorks';
+import { ForAdministradoras } from './components/ForAdministradoras';
+import { LeadMagnet } from './components/LeadMagnet';
+import { About } from './components/About';
+import { HighlightsStrip } from './components/HighlightsStrip';
+import { FAQ } from './components/FAQ';
+import { Contact } from './components/Contact';
+import { WhatsAppFloat } from './components/WhatsAppFloat';
+import { PrivacyModal } from './components/PrivacyModal';
+import {
+  FOOTER_CONTENT,
+  NAVIGATION,
+  SITE_CONFIG,
+  getWhatsAppUrl,
+} from './src/content';
+import { initTracking, trackWhatsAppClick } from './src/tracking';
 
-const Logo: React.FC<{ isScrolled: boolean }> = ({ isScrolled }) => {
-  const { content } = usePageContent();
-  const { branding } = content;
-
-  if (branding.logoUrl && !branding.showDefaultLogo) {
-    return (
-      <div className="flex items-center">
-        <img 
-          src={branding.logoUrl} 
-          alt="Rudy Endo Advocacia" 
-          className="h-12 md:h-16 w-auto object-contain transition-all duration-300"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            // Fallback para tentar converter links de visualização em links diretos se falhar
-            if (target.src.includes('ibb.co') && !target.src.includes('i.ibb.co')) {
-               target.src = target.src.replace('ibb.co', 'i.ibb.co') + '.png';
-            }
-          }}
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex items-center gap-4 group">
-      <div className="relative w-14 h-14 flex-shrink-0 overflow-hidden shadow-sm">
-        <div className="absolute top-0 left-0 w-full h-1/2 bg-[#912018]"></div>
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[#451F19]"></div>
-        <svg 
-          viewBox="0 0 100 100" 
-          className="absolute inset-0 w-full h-full p-1 z-10"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M10 10 H90 V90 H10 Z" fill="none" stroke="white" strokeWidth="4" />
-          <path d="M35 10 V90 M65 10 V90" fill="none" stroke="white" strokeWidth="4" />
-          <path d="M10 65 C10 55, 15 48, 22 45 C28 42, 35 45, 40 50 C45 55, 45 65, 40 75 C35 85, 25 90, 15 90 L10 90 Z" fill="white" />
-          <path d="M18 55 C22 52, 28 50, 32 52 C35 54, 35 60, 32 65 C28 70, 22 72, 18 68 Z" fill="#451F19" />
-          <path d="M10 42 C15 35 25 32 35 35 C42 38 45 45 42 52 C40 58 35 62 30 60 C25 58 20 52 22 45 C15 45 10 48 10 55 Z" fill="white" />
-        </svg>
-      </div>
-      <div className="flex flex-col justify-center">
-        <div className="flex flex-col leading-[0.85]">
-          <span className={`text-[26px] font-bold tracking-tight ${isScrolled ? 'text-[#1A1A1A]' : 'text-white'}`}>
-            RUDY
-          </span>
-          <span className="text-[26px] font-bold tracking-tight text-[#451F19]">
-            ENDO
-          </span>
-        </div>
-        <div className="flex flex-col mt-0.5">
-          <div className="h-[2px] w-full bg-[#912018]"></div>
-          <span className={`text-[9px] font-bold tracking-[0.45em] uppercase py-0.5 ${isScrolled ? 'text-[#1A1A1A]' : 'text-white'}`}>
-            ADVOCACIA
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const AppContent: React.FC = () => {
+const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    initTracking();
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Início', href: '#' },
-    { name: 'Serviços', href: '#servicos' },
-    { name: 'Ebook', href: '#ebook' },
-    { name: 'O Especialista', href: '#sobre' },
-    { name: 'Contato', href: '#contato' }
-  ];
-
-  const scrollTo = (href: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
     setMobileMenuOpen(false);
-    if (href === '#') window.scrollTo({ top: 0, behavior: 'smooth' });
-    else document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    if (href === '#inicio') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg py-2' : 'bg-transparent py-4'
-      }`}>
-        <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="cursor-pointer" onClick={() => scrollTo('#')}>
-            <Logo isScrolled={isScrolled} />
-          </div>
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => scrollTo(link.href)}
-                className={`text-xs font-bold transition-colors hover:text-[#912018] uppercase tracking-[0.2em] ${
-                  isScrolled ? 'text-slate-800' : 'text-white'
-                }`}
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 transition-shadow duration-200 ${
+          isScrolled ? 'shadow-md py-2.5' : 'shadow-xs py-3'
+        }`}
+      >
+        <div className="container mx-auto px-5 sm:px-6 max-w-6xl flex items-center justify-between gap-6">
+          <a
+            href="#inicio"
+            onClick={(e) => handleNavClick(e, '#inicio')}
+            className="shrink-0 focus-visible:outline-2"
+            aria-label={SITE_CONFIG.BRANDING.name}
+          >
+            <BrandLogo variant="dark" />
+          </a>
+
+          <nav
+            aria-label="Navegação principal"
+            className="hidden lg:flex items-center gap-6"
+          >
+            {NAVIGATION.links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="text-sm font-medium text-slate-800 transition-colors whitespace-nowrap shrink-0 hover:text-[#912018]"
               >
-                {link.name}
-              </button>
+                {link.label}
+              </a>
             ))}
-            <button onClick={() => scrollTo('#contato')} className="px-6 py-3 bg-[#912018] text-white text-xs font-bold rounded-sm hover:bg-[#451F19] transition-all shadow-md uppercase tracking-[0.2em]">
-              Consultoria Direta
-            </button>
           </nav>
-          <button className="lg:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className={isScrolled ? 'text-slate-900' : 'text-white'} /> : <Menu className={isScrolled ? 'text-slate-900' : 'text-white'} />}
+
+          <div className="hidden lg:flex items-center shrink-0">
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('menu')}
+              className="px-5 py-2.5 min-h-[42px] inline-flex items-center justify-center bg-[#912018] text-white text-sm font-semibold rounded-xl hover:bg-[#451F19] transition-colors shadow-sm whitespace-nowrap shrink-0"
+            >
+              {NAVIGATION.ctaLabel}
+            </a>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+            className="lg:hidden p-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded-xl text-slate-900 hover:bg-slate-100 transition-colors"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" aria-hidden="true" />
+            ) : (
+              <Menu className="w-6 h-6" aria-hidden="true" />
+            )}
           </button>
         </div>
+
         {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-2xl border-t border-slate-100 animate-in fade-in">
-            <div className="flex flex-col p-6 gap-4">
-              {navLinks.map((link) => (
-                <button key={link.name} onClick={() => scrollTo(link.href)} className="text-left py-3 text-slate-900 font-bold uppercase tracking-widest border-b border-slate-50">{link.name}</button>
+          <div
+            id="mobile-menu"
+            className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-2xl border-t border-slate-200"
+          >
+            <nav
+              aria-label="Menu mobile"
+              className="flex flex-col p-5 gap-1"
+            >
+              {NAVIGATION.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="py-3.5 px-3 text-slate-900 font-semibold rounded-xl hover:bg-slate-50 border-b border-slate-100 last:border-b-0 min-h-[44px] flex items-center"
+                >
+                  {link.label}
+                </a>
               ))}
-            </div>
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  trackWhatsAppClick('menu_mobile');
+                  setMobileMenuOpen(false);
+                }}
+                className="mt-3 py-3.5 px-5 min-h-[48px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors text-center"
+              >
+                {NAVIGATION.ctaLabel}
+              </a>
+            </nav>
           </div>
         )}
       </header>
 
       <main>
         <Hero />
+        <PainPoints />
         <Services />
-        <LeadMagnet />
+        <HowItWorks />
+        <ForAdministradoras />
+        <LeadMagnet onOpenPrivacy={() => setPrivacyOpen(true)} />
         <About />
-        <div className="bg-gradient-to-r from-[#912018] to-[#451F19] py-16">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center text-white">
-              <div className="space-y-2">
-                <div className="text-5xl font-bold mb-1">10+</div>
-                <div className="text-white/70 text-xs font-bold uppercase tracking-widest">Anos de Especialização</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-5xl font-bold mb-1">500+</div>
-                <div className="text-white/70 text-xs font-bold uppercase tracking-widest">Condomínios Assessorados</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-5xl font-bold mb-1">98%</div>
-                <div className="text-white/70 text-xs font-bold uppercase tracking-widest">Recuperação de Ativos</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-5xl font-bold mb-1">100%</div>
-                <div className="text-white/70 text-xs font-bold uppercase tracking-widest">Foco no Síndico</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Contact />
+        <HighlightsStrip />
+        <FAQ />
+        <Contact onOpenPrivacy={() => setPrivacyOpen(true)} />
       </main>
 
-      <footer className="bg-[#1A1A1A] py-16">
-        <div className="container mx-auto px-6 text-center flex flex-col items-center gap-6">
-          <Logo isScrolled={false} />
-          <div className="text-slate-500 text-[11px] uppercase tracking-widest">
-            © {new Date().getFullYear()} Rudy Endo Advocacia. Excelência Jurídica Condominial.
+      <footer className="bg-[#1A1A1A] text-slate-300 py-14 border-t border-white/10">
+        <div className="container mx-auto px-5 sm:px-6 max-w-6xl">
+          <div className="flex flex-col items-center text-center gap-4">
+            <BrandLogo variant="light" />
+
+            <div className="space-y-1.5 text-xs sm:text-sm text-slate-300 max-w-3xl mt-2">
+              <p className="font-medium text-white">{FOOTER_CONTENT.societyLine}</p>
+              <p>{FOOTER_CONTENT.lawyerLine}</p>
+              <p>
+                <a
+                  href={SITE_CONFIG.CONTACT_INFO.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white underline-offset-4 hover:underline"
+                >
+                  {SITE_CONFIG.CONTACT_INFO.address}
+                </a>
+              </p>
+              <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 pt-1">
+                <a
+                  href={getWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick('rodape')}
+                  className="hover:text-white underline-offset-4 hover:underline"
+                >
+                  WhatsApp {SITE_CONFIG.CONTACT_INFO.whatsappDisplay}
+                </a>
+                <span aria-hidden="true">·</span>
+                <a
+                  href={`mailto:${SITE_CONFIG.CONTACT_INFO.email}`}
+                  className="hover:text-white underline-offset-4 hover:underline"
+                >
+                  {SITE_CONFIG.CONTACT_INFO.email}
+                </a>
+                <span aria-hidden="true">·</span>
+                <button
+                  type="button"
+                  onClick={() => setPrivacyOpen(true)}
+                  className="hover:text-white underline underline-offset-4"
+                >
+                  Política de Privacidade
+                </button>
+              </p>
+            </div>
+
+            <p className="text-slate-400 text-xs max-w-2xl pt-4 border-t border-white/10 w-full leading-relaxed">
+              {FOOTER_CONTENT.legalNote}
+            </p>
           </div>
         </div>
       </footer>
-      <AIAssistant />
-      <AdminPanel />
+
+      <WhatsAppFloat />
+      <PrivacyModal
+        isOpen={privacyOpen}
+        onClose={() => setPrivacyOpen(false)}
+      />
     </div>
   );
 };
-
-const App: React.FC = () => (
-  <PageContentProvider>
-    <AppContent />
-  </PageContentProvider>
-);
 
 export default App;

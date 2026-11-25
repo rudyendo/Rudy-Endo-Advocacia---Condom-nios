@@ -1,53 +1,154 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rudy Endo Advocacia - Especialista em Direito Condominial</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-      window.process = window.process || { env: {} };
-    </script>
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      h1, h2, h3, .font-serif {
-        font-family: 'Playfair Display', serif;
-      }
-      .bg-brand-red { background-color: #912018; }
-      .text-brand-red { color: #912018; }
-      .border-brand-red { border-color: #912018; }
-      .bg-brand-brown { background-color: #451F19; }
-      
-      .no-scrollbar::-webkit-scrollbar { display: none; }
-      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    <title>Rudy Endo Advocacia | Advogado Condominial em Natal/RN</title>
+    <meta
+      name="description"
+      content="Assessoria jurídica para síndicos e condomínios em Natal e no Nordeste: cobrança de inadimplentes, assembleias, convenção e regimento, pareceres e defesa em processos. Fale pelo WhatsApp."
+    />
 
-      @keyframes spin-slow {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/aistudio/logo_31f9d3a3.png" />
+    <link rel="apple-touch-icon" href="/assets/aistudio/logo_31f9d3a3.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Rudy Endo Advocacia" />
+    <meta
+      property="og:title"
+      content="Assessoria jurídica para síndicos — Rudy Endo Advocacia"
+    />
+    <meta
+      property="og:description"
+      content="Inadimplência, assembleias, convenção e conflitos: orientação jurídica clara para o síndico decidir com segurança. Natal/RN e atendimento online."
+    />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Rudy Endo Advocacia — Direito Condominial | Natal/RN"
+    />
+    <meta property="og:url" content="https://rudyendo.adv.br/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Assessoria jurídica para síndicos — Rudy Endo Advocacia"
+    />
+    <meta
+      name="twitter:description"
+      content="Inadimplência, assembleias, convenção e conflitos: orientação jurídica clara para o síndico decidir com segurança. Natal/RN e atendimento online."
+    />
+    <meta name="twitter:image" content="/og-image.jpg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LegalService",
+            "name": "Rudy Endo Advocacia",
+            "legalName": "Rudy Endo – Sociedade Individual de Advocacia",
+            "taxID": "28.528.995/0001-87",
+            "telephone": "+55-84-99834-7202",
+            "email": "rudy@rudyendo.adv.br",
+            "url": "https://rudyendo.adv.br/",
+            "image": "/og-image.jpg",
+            "logo": "/assets/aistudio/logo_31f9d3a3.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Rua Desembargador Régulo Tinôco, 1293-B, Sala 02",
+              "addressLocality": "Natal",
+              "addressRegion": "RN",
+              "postalCode": "59022-080",
+              "addressCountry": "BR"
+            },
+            "openingHours": "Mo-Fr 09:00-18:00",
+            "areaServed": [
+              "Rio Grande do Norte",
+              "Paraíba",
+              "Pernambuco",
+              "Ceará"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "O síndico pode contratar um advogado para o condomínio?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. O síndico representa o condomínio (art. 1.348 do Código Civil). Dependendo da convenção e do orçamento aprovado, a contratação pode exigir aval do conselho ou da assembleia — e nós preparamos a proposta nesse formato."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quanto custa a assessoria?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Depende do porte do condomínio e do escopo (mensal ou por demanda). Após uma conversa inicial, enviamos uma proposta por escrito, sem compromisso."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como funciona a cobrança de inadimplentes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Começa com uma cobrança extrajudicial organizada. Se não houver acordo, as cotas condominiais podem ser cobradas por execução judicial, pois são título executivo extrajudicial (art. 784, X, do CPC)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Vocês participam das assembleias?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim, presencialmente ou online, conforme combinado na proposta. Também revisamos o edital de convocação e a ata."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Atendem condomínios fora de Natal?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. Atendemos presencialmente no Rio Grande do Norte, Paraíba, Pernambuco e Ceará, e de forma online em todo o Brasil."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Já temos advogado. Faz sentido conversar?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim. Podemos atuar em uma demanda específica ou dar uma segunda opinião sobre um caso."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Em quanto tempo recebo uma resposta?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Respondemos aos contatos em até 24 horas úteis. Reuniões presenciais são feitas mediante agendamento."
+                }
+              }
+            ]
+          }
+        ]
       }
-      .animate-spin-slow { animation: spin-slow 8s linear infinite; }
-    </style>
-    <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "@google/genai": "https://esm.sh/@google/genai@1.34.0",
-    "lucide-react": "https://esm.sh/lucide-react@0.462.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "vite": "https://esm.sh/vite@^7.3.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
-  }
-}
-</script>
+    </script>
   </head>
   <body class="bg-slate-50 text-slate-900">
     <div id="root"></div>
