@@ -21,7 +21,7 @@ export const SITE_CONFIG = {
     oabLawyer: 'OAB/RN nº 12.466',
     lawyerFullName: 'Rudy Anderson Diniz Endo',
     cnpj: '28.528.995/0001-87',
-    logoUrl: '/assets/aistudio/logo_31f9d3a3.png',
+    logoUrl: '/assets/aistudio/logo_3ea6d8e0.png',
     aboutImageUrl: '/assets/aistudio/rudy-endo_750fad2e.jpeg',
     aboutImageAlt: 'Dr. Rudy Endo, advogado condominial em Natal/RN',
     heroImageUrl: heroCondominiumImage,

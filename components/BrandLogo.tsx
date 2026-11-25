@@ -28,8 +28,8 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     <img
       src={SITE_CONFIG.BRANDING.logoUrl}
       alt={SITE_CONFIG.BRANDING.name}
-      width={200}
-      height={95}
+      width={245}
+      height={108}
       referrerPolicy="no-referrer"
       onError={() => setImgError(true)}
       className={`h-10 sm:h-12 w-auto object-contain shrink-0 ${className}`}
