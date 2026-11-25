@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <script>
-      // Mock process.env para compatibilidade básica caso o bundler não injete
       window.process = window.process || { env: {} };
     </script>
     <style>
@@ -20,12 +19,10 @@
       h1, h2, h3, .font-serif {
         font-family: 'Playfair Display', serif;
       }
-      /* Cores do Logotipo Rudy Endo */
       .bg-brand-red { background-color: #912018; }
       .text-brand-red { color: #912018; }
       .border-brand-red { border-color: #912018; }
       .bg-brand-brown { background-color: #451F19; }
-      .text-brand-brown { color: #451F19; }
       
       .no-scrollbar::-webkit-scrollbar { display: none; }
       .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

@@ -4,8 +4,9 @@ import { PageContent } from '../types';
 
 const defaultContent: PageContent = {
   branding: {
-    logoUrl: "", // Vazio por padrão para usar a logo SVG original
-    showDefaultLogo: true
+    // Usando o link direto que o ImgBB gera para imagens
+    logoUrl: "https://i.ibb.co/G3Xm83r/rudy-endo-logo.png", 
+    showDefaultLogo: false
   },
   hero: {
     title: "Assessoria de Elite para Síndicos",

@@ -16,11 +16,20 @@ const Logo: React.FC<{ isScrolled: boolean }> = ({ isScrolled }) => {
 
   if (branding.logoUrl && !branding.showDefaultLogo) {
     return (
-      <img 
-        src={branding.logoUrl} 
-        alt="Rudy Endo Advocacia" 
-        className="h-12 w-auto object-contain"
-      />
+      <div className="flex items-center">
+        <img 
+          src={branding.logoUrl} 
+          alt="Rudy Endo Advocacia" 
+          className="h-12 md:h-16 w-auto object-contain transition-all duration-300"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            // Fallback para tentar converter links de visualização em links diretos se falhar
+            if (target.src.includes('ibb.co') && !target.src.includes('i.ibb.co')) {
+               target.src = target.src.replace('ibb.co', 'i.ibb.co') + '.png';
+            }
+          }}
+        />
+      </div>
     );
   }
 
