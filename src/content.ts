@@ -63,125 +63,167 @@ export const NAVIGATION = {
 };
 
 export const HERO_CONTENT = {
-  badge: 'DIREITO CONDOMINIAL · NATAL/RN',
-  title: 'Assessoria jurídica para síndicos que precisam decidir com segurança',
+  eyebrow: 'DIREITO CONDOMINIAL · NATAL/RN',
+  titleMain: 'O síndico responde pelas decisões que toma.',
+  titleHighlight: 'Não decida sozinho.',
   subtitle:
-    'Inadimplência, assembleias contestadas, convenção desatualizada ou condômino em conflito? Orientamos o síndico e o conselho com respostas claras, por escrito e no prazo que a gestão exige.',
-  primaryCta: 'Falar no WhatsApp',
-  secondaryCta: 'Baixar guia gratuito',
-  supportLine:
-    'Resposta em até 24 horas úteis · Atendimento presencial no RN, PB, PE e CE e online em todo o Brasil',
+    'Inadimplência pressionando o caixa, assembleia que pode ser anulada, condômino ameaçando processar. Assessoria jurídica para síndicos de Natal e do Nordeste, com orientação por escrito em até 24 horas úteis.',
+  primaryCta: 'Falar com o advogado agora',
+  secondaryCta: 'Baixar o guia gratuito',
+  supportItems: [
+    'Atendimento direto com o advogado',
+    'Resposta em até 24h úteis',
+    'Presencial no RN, PB, PE e CE e online em todo o Brasil',
+  ],
 };
 
 export const PAIN_POINTS_CONTENT = {
-  title: 'Situações em que o síndico não deveria decidir sozinho',
+  eyebrow: 'RISCOS DO DIA A DIA',
+  title: 'Quanto custa adiar uma decisão jurídica no condomínio?',
+  subtitle:
+    'Os problemas abaixo parecem pequenos — até chegarem à assembleia, ao conselho ou ao Judiciário.',
   items: [
-    'A inadimplência está comprometendo o caixa e as cobranças amigáveis já não funcionam.',
-    'Uma assembleia foi questionada — ou você teme que a próxima seja.',
-    'A convenção e o regimento interno não dão conta dos problemas atuais (aluguel por temporada, animais, obras, vagas).',
-    'Um condômino ameaça processar o condomínio ou o síndico.',
-    'O conselho pede uma decisão e você precisa de um fundamento jurídico por escrito.',
-    'Há um contrato, obra ou funcionário que pode gerar passivo para o condomínio.',
+    {
+      number: '01',
+      title: 'Cada mês de inadimplência sai do bolso de quem paga em dia.',
+      consequence:
+        'Sem cobrança estruturada, o rombo vira cota extra, obra adiada e desgaste do síndico na assembleia.',
+    },
+    {
+      number: '02',
+      title: 'Uma falha no edital pode anular tudo o que foi aprovado.',
+      consequence:
+        'Quórum errado, convocação fora do prazo ou ata mal redigida abrem espaço para ação judicial — e para refazer a assembleia.',
+    },
+    {
+      number: '03',
+      title: 'Regras antigas não resolvem problemas novos.',
+      consequence:
+        'Aluguel por temporada, animais, carregador de carro elétrico, obras: sem previsão clara na convenção, cada multa aplicada pode ser contestada.',
+    },
+    {
+      number: '04',
+      title: 'Ameaça de processo não se responde no grupo do WhatsApp.',
+      consequence:
+        'O que o síndico escreve hoje pode virar prova amanhã. Responder com orientação jurídica evita que um conflito vire ação.',
+    },
+    {
+      number: '05',
+      title: 'O síndico pode ser responsabilizado pessoalmente.',
+      consequence:
+        'Atos de gestão praticados com culpa, omissão ou excesso de poderes podem gerar responsabilização pessoal do síndico — não apenas do condomínio.',
+    },
+    {
+      number: '06',
+      title: 'Contrato mal feito vira dívida do condomínio.',
+      consequence:
+        'Terceirizada que não paga os funcionários, obra sem controle da NBR 16.280, administradora sem cláusulas claras: o passivo costuma cair no condomínio.',
+    },
   ],
-  closingLine:
-    'Se alguma dessas situações é familiar, uma conversa de 15 minutos pode evitar meses de problema.',
-  ctaLabel: 'Quero conversar sobre o meu condomínio',
+  closingTitle: 'Reconheceu alguma dessas situações?',
+  closingText:
+    'Uma conversa de 15 minutos com o advogado pode evitar meses de problema — e proteger você na prestação de contas.',
+  ctaLabel: 'Quero orientação para o meu condomínio',
 };
 
 export const SERVICES_CONTENT = {
-  title: 'Como podemos ajudar o seu condomínio',
-  subtitle: 'Atuação dedicada ao Direito Condominial, do preventivo ao contencioso.',
+  eyebrow: 'COMO PODEMOS AJUDAR',
+  title: 'Você cuida da gestão. A parte jurídica fica com a gente.',
+  ctaLabel: 'Falar com o advogado agora',
   items: [
     {
       id: 'cobranca',
       title: 'Cobrança de inadimplentes',
       description:
-        'Cobrança extrajudicial organizada e, quando necessário, execução judicial das cotas condominiais — com acompanhamento e relatórios periódicos para o síndico e o conselho.',
+        'Você deixa de ser o cobrador. Estruturamos a cobrança extrajudicial e, se não houver acordo, executamos as cotas na Justiça — com relatório periódico para prestar contas ao conselho.',
     },
     {
       id: 'assembleias',
-      title: 'Assembleias',
+      title: 'Assembleias seguras, do edital à ata',
       description:
-        'Revisão do edital de convocação, orientação sobre quórum e votação, presença em assembleias quando necessário e redação ou revisão da ata, reduzindo o risco de anulação.',
+        'Revisamos a convocação, orientamos quórum e votação, participamos quando necessário e redigimos a ata. Menos brecha para contestação.',
     },
     {
       id: 'convencao',
-      title: 'Convenção e regimento interno',
+      title: 'Convenção e regimento atualizados',
       description:
-        'Revisão e atualização da convenção e do regimento conforme o Código Civil e a realidade atual do condomínio, com apoio na aprovação em assembleia e no registro em cartório.',
+        'Regras claras para multar, autorizar e proibir — com base legal e aprovação conduzida em assembleia, até o registro em cartório.',
     },
     {
       id: 'pareceres',
-      title: 'Pareceres para o síndico e o conselho',
+      title: 'Parecer por escrito para decisões difíceis',
       description:
-        'Respostas por escrito para questões do dia a dia: multas, uso de áreas comuns, obras em unidades, locação por temporada, animais, barulho, vagas de garagem.',
+        'Quando o conselho cobra e o condômino contesta, você decide com um documento jurídico na mão.',
     },
     {
       id: 'defesa',
       title: 'Defesa do condomínio em processos',
       description:
-        'Atuação em ações cíveis e trabalhistas envolvendo o condomínio, sempre com comunicação clara sobre andamento, riscos e próximos passos.',
+        'Ações cíveis e trabalhistas com acompanhamento próximo: você é informado de cada passo, sem juridiquês.',
     },
     {
       id: 'contratos',
-      title: 'Contratos, registros e prevenção de riscos',
+      title: 'Contratos, obras e registros',
       description:
-        'Análise de contratos com prestadores, administradoras e obras (incluindo exigências da NBR 16.280 para reformas em unidades), além de questões de matrícula, instituição e registro do condomínio.',
+        'Terceirizadas, administradora, reformas (NBR 16.280), matrícula e instituição do condomínio: prevenção de passivos antes que eles apareçam.',
     },
   ],
 };
 
 export const HOW_IT_WORKS_CONTENT = {
-  title: 'Como funciona a contratação',
+  eyebrow: 'SEM COMPLICAÇÃO',
+  title: 'Simples para o síndico. Claro para o conselho.',
   steps: [
     {
       number: '01',
-      title: 'Conversa inicial',
+      title: 'Você conta o que está acontecendo',
       description:
-        'Você conta a situação pelo WhatsApp ou formulário. Entendemos o caso e o perfil do condomínio.',
+        'Pelo WhatsApp ou formulário. Em até 24h úteis, o próprio advogado retorna.',
     },
     {
       number: '02',
-      title: 'Proposta por escrito',
+      title: 'Recebe uma proposta por escrito',
       description:
-        'Enviamos uma proposta com escopo e honorários — assessoria mensal ou atuação por demanda — no formato que o conselho e a assembleia precisam para avaliar.',
+        'Escopo e honorários definidos — mensal ou por demanda — prontos para apresentar ao conselho ou à assembleia.',
     },
     {
       number: '03',
-      title: 'Acompanhamento contínuo',
+      title: 'Conta com acompanhamento contínuo',
       description:
-        'Canal direto com o advogado responsável, prazos definidos e relatórios para o síndico prestar contas com tranquilidade.',
+        'Canal direto, prazos combinados e relatórios que facilitam sua prestação de contas.',
     },
   ],
-  note: 'Precisa apresentar a proposta ao conselho ou levar à assembleia? Preparamos a documentação e, se necessário, explicamos a proposta aos condôminos.',
+  note: 'Precisa da aprovação da assembleia para contratar? Preparamos a documentação e, se necessário, apresentamos a proposta aos condôminos.',
 };
 
 export const ADMINISTRADORAS_CONTENT = {
-  title: 'É administradora de condomínios?',
-  text: 'Atendemos administradoras que buscam um parceiro jurídico para sua carteira de condomínios: cobrança, pareceres e suporte em assembleias, com padrão de atendimento e relatórios unificados.',
-  ctaLabel: 'Falar sobre parceria',
+  eyebrow: 'PARCERIAS',
+  title: 'Administradora de condomínios?',
+  text: 'Ofereça aos seus condomínios um suporte jurídico padronizado: cobrança, pareceres e assembleias, com um único interlocutor e relatórios unificados para toda a carteira.',
+  ctaLabel: 'Conversar sobre parceria',
 };
 
 export const EBOOK_CONTENT = {
-  badge: 'MATERIAL GRATUITO',
-  title: 'Guia do Síndico: 5 pontos de atenção jurídica no condomínio',
+  eyebrow: 'MATERIAL GRATUITO',
+  title: 'Guia do Síndico: 5 erros jurídicos que mais geram problemas no condomínio',
   description:
-    'Um material prático, escrito pelo Dr. Rudy Endo, para o síndico identificar riscos antes que virem problema.',
-  listTitle: 'O que você vai encontrar:',
+    'Um guia prático, escrito pelo Dr. Rudy Endo, para você identificar os riscos antes que eles cheguem à assembleia.',
+  listTitle: 'Você vai descobrir:',
   items: [
-    'Checklist para convocar e conduzir assembleias válidas',
-    'Como estruturar a cobrança de inadimplentes',
-    'Responsabilidade civil do síndico: o que evitar',
-    'Obras em unidades e a NBR 16.280',
-    'Quando atualizar a convenção e o regimento interno',
+    'Os erros de convocação que podem anular uma assembleia',
+    'Como cobrar inadimplentes sem desgaste pessoal',
+    'Quando o síndico responde com o próprio patrimônio',
+    'O que a NBR 16.280 exige do síndico em obras nas unidades',
+    'Os sinais de que a convenção precisa ser atualizada',
   ],
-  formTitle: 'Receba o guia agora',
+  formTitle: 'Receba o guia gratuito',
   profileOptions: ['Síndico', 'Conselheiro', 'Administradora', 'Condômino'],
   consentText:
     'Concordo em receber o material e comunicações da Rudy Endo Advocacia, conforme a',
   consentLinkLabel: 'Política de Privacidade',
-  submitLabel: 'Quero receber o guia',
-  microtext: 'Seus dados não são compartilhados com terceiros.',
+  submitLabel: 'Quero o guia gratuito',
+  microtext:
+    'Enviamos também no seu WhatsApp. Seus dados não são compartilhados com terceiros.',
   thankYou: {
     title: 'Pronto! Seu guia está aqui.',
     text: 'Clique abaixo para baixar. Se surgir alguma dúvida durante a leitura, fale com a gente pelo WhatsApp.',
@@ -191,13 +233,14 @@ export const EBOOK_CONTENT = {
 };
 
 export const ABOUT_CONTENT = {
-  title: 'Quem cuida do seu condomínio',
-  nameLine: 'Dr. Rudy Endo — OAB/RN nº 12.466',
+  eyebrow: 'QUEM VAI ESTAR AO SEU LADO',
+  title: 'Dr. Rudy Endo',
+  nameLine: 'Advogado · OAB/RN nº 12.466',
   paragraphs: [
-    'Advogado com 10 anos de atuação em Direito Condominial, Rudy Endo assessora síndicos, conselhos e administradoras a partir de Natal/RN. É pós-graduado em Direito Imobiliário Aplicado e em Direito Notarial e Registral — formação que une a gestão do condomínio às questões de matrícula, registro e documentação dos imóveis.',
-    'Seu trabalho parte de um princípio simples: o síndico precisa de respostas claras, por escrito e a tempo de decidir. Por isso, o atendimento é direto com o advogado responsável, com foco em prevenção — para que os conflitos sejam resolvidos antes de chegar ao Judiciário sempre que possível.',
+    'Há 10 anos, Rudy Endo atua ao lado de síndicos, conselhos e administradoras em Direito Condominial. Pós-graduado em Direito Imobiliário Aplicado e em Direito Notarial e Registral, une a rotina da gestão condominial às questões de matrícula, registro e documentação dos imóveis.',
+    'Seu método é direto: o síndico precisa de respostas claras, por escrito e a tempo de decidir. Por isso, quem atende é o próprio advogado — e o foco é resolver antes que o problema chegue ao Judiciário.',
   ],
-  differentialsTitle: 'Diferenciais',
+  differentialsEyebrow: 'DIFERENCIAIS',
   differentials: [
     'Atendimento direto com o advogado responsável',
     'Respostas por escrito, em linguagem acessível ao conselho e aos condôminos',
@@ -210,25 +253,37 @@ export const ABOUT_CONTENT = {
 export const HIGHLIGHTS_CONTENT = [
   {
     value: '10 anos',
-    label: 'de atuação em Direito Condominial',
+    label: 'em Direito Condominial',
   },
   {
-    value: '2 pós-graduações',
-    label: 'Direito Imobiliário e Notarial e Registral',
+    value: '2',
+    label: 'pós-graduações na área imobiliária e registral',
   },
   {
-    value: 'Até 24h úteis',
-    label: 'para responder seu contato',
+    value: '24h úteis',
+    label: 'prazo máximo de retorno',
   },
   {
     value: '4 estados',
-    label: 'com atendimento presencial (RN, PB, PE e CE)',
+    label: 'atendimento presencial',
   },
 ];
 
 export const FAQ_CONTENT = {
+  eyebrow: 'PERGUNTAS FREQUENTES',
   title: 'Dúvidas frequentes',
   items: [
+    {
+      question: 'O síndico pode ser responsabilizado pessoalmente?',
+      answer:
+        'Pode. O síndico responde pelos atos de gestão (art. 1.348 do Código Civil) e pode ser responsabilizado por danos causados por culpa, omissão ou excesso de poderes. Por isso, decisões sensíveis devem ter fundamento jurídico por escrito.',
+    },
+    {
+      question:
+        'O condomínio responde por dívidas trabalhistas da empresa terceirizada?',
+      answer:
+        'Pode responder de forma subsidiária, especialmente se não fiscalizar o cumprimento do contrato (Súmula 331 do TST). A análise prévia dos contratos reduz esse risco.',
+    },
     {
       question: 'O síndico pode contratar um advogado para o condomínio?',
       answer:
@@ -268,9 +323,10 @@ export const FAQ_CONTENT = {
 };
 
 export const CONTACT_CONTENT = {
-  title: 'Fale com o advogado',
+  eyebrow: 'FALE COM O ADVOGADO',
+  title: 'Conte o que está acontecendo no seu condomínio',
   description:
-    'Conte brevemente a situação do seu condomínio. Retornamos em até 24 horas úteis.',
+    'Você recebe retorno do próprio advogado em até 24 horas úteis. Quanto antes a questão for analisada, mais opções você tem.',
   unitOptions: ['até 30', '31–100', '101–300', 'mais de 300'],
   subjectOptions: [
     'Inadimplência',
@@ -280,7 +336,7 @@ export const CONTACT_CONTENT = {
     'Parecer',
     'Outro',
   ],
-  submitLabel: 'Enviar e receber retorno',
+  submitLabel: 'Quero receber orientação',
   thankYou: {
     title: 'Mensagem recebida!',
     text: 'Retornaremos em até 24 horas úteis. Se for urgente, chame no WhatsApp.',
@@ -289,8 +345,8 @@ export const CONTACT_CONTENT = {
 };
 
 export const FLOATING_WHATSAPP_CONTENT = {
-  label: 'Fale com o advogado',
-  ariaLabel: 'Falar com o advogado no WhatsApp',
+  label: 'Dúvida urgente? Fale com o advogado',
+  ariaLabel: 'Dúvida urgente? Fale com o advogado no WhatsApp',
 };
 
 export const FOOTER_CONTENT = {

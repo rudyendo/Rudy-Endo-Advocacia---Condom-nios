@@ -15,7 +15,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   if (imgError || !SITE_CONFIG.BRANDING.logoUrl) {
     return (
       <span
-        className={`font-serif text-lg sm:text-xl font-bold tracking-tight whitespace-nowrap shrink-0 ${
+        className={`font-sans text-lg sm:text-xl font-bold tracking-tight whitespace-nowrap shrink-0 ${
           variant === 'dark' ? 'text-slate-900' : 'text-white'
         } ${className}`}
       >

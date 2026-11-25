@@ -24,9 +24,9 @@ export const About: React.FC = () => {
                 />
               ) : (
                 <div className="w-full h-full bg-gradient-to-br from-slate-900 via-[#1A1A1A] to-[#451F19] flex flex-col items-center justify-center p-8 text-center text-white">
-                  <Scale className="w-12 h-12 text-[#d9534f] mb-4" aria-hidden="true" />
-                  <p className="font-serif text-2xl font-bold mb-1">Dr. Rudy Endo</p>
-                  <p className="text-sm text-slate-300">
+                  <Scale className="w-12 h-12 text-[#EF4444] mb-4" aria-hidden="true" />
+                  <p className="font-sans text-2xl font-bold mb-1">Dr. Rudy Endo</p>
+                  <p className="text-sm text-[#CBD5E1]">
                     {SITE_CONFIG.BRANDING.oabLawyer}
                   </p>
                 </div>
@@ -35,31 +35,32 @@ export const About: React.FC = () => {
           </div>
 
           <div className="w-full lg:w-7/12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3 text-balance">
+            <p className="eyebrow-light mb-3">{ABOUT_CONTENT.eyebrow}</p>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-slate-900 leading-[1.15] tracking-[-0.01em] mb-2 text-balance">
               {ABOUT_CONTENT.title}
             </h2>
-            <p className="text-base sm:text-lg font-semibold text-[#912018] mb-6">
+            <p className="font-sans text-[16px] font-semibold text-slate-700 mb-6">
               {ABOUT_CONTENT.nameLine}
             </p>
 
-            <div className="space-y-4 text-base sm:text-lg text-slate-700 leading-relaxed mb-8">
+            <div className="space-y-4 text-[16px] lg:text-[17px] leading-[1.65] text-[#334155] max-w-[65ch] mb-8">
               {ABOUT_CONTENT.paragraphs.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 mb-4">
-                {ABOUT_CONTENT.differentialsTitle}
-              </h3>
+              <p className="eyebrow-light mb-4">
+                {ABOUT_CONTENT.differentialsEyebrow}
+              </p>
               <ul className="space-y-3">
                 {ABOUT_CONTENT.differentials.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle2
-                      className="w-5 h-5 text-[#912018] shrink-0 mt-0.5"
+                      className="w-5 h-5 text-[#912018] shrink-0 mt-1"
                       aria-hidden="true"
                     />
-                    <span className="text-slate-700 font-medium text-[15px] sm:text-base">
+                    <span className="text-[16px] lg:text-[17px] leading-[1.55] text-[#334155] font-medium">
                       {item}
                     </span>
                   </li>

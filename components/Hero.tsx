@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen, Check } from 'lucide-react';
 import { HERO_CONTENT, SITE_CONFIG, getWhatsAppUrl } from '../src/content';
 import { trackWhatsAppClick } from '../src/tracking';
 
@@ -7,7 +7,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-[620px] lg:min-h-[88vh] flex items-center overflow-hidden bg-[#1A1A1A] pt-28 pb-20 lg:pt-32 lg:pb-24"
+      className="relative min-h-[640px] lg:min-h-[88vh] flex items-center overflow-hidden bg-[#1A1A1A] pt-28 pb-20 lg:pt-32 lg:pb-24"
     >
       <div className="absolute inset-0 z-0">
         <img
@@ -22,16 +22,17 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-5 sm:px-6 relative z-10 max-w-6xl">
-        <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300 mb-6">
-            {HERO_CONTENT.badge}
-          </p>
+        <div className="max-w-4xl">
+          <p className="eyebrow-dark mb-5">{HERO_CONTENT.eyebrow}</p>
 
-          <h1 className="text-[clamp(2rem,4.4vw,3.75rem)] font-bold text-white leading-[1.12] mb-6 text-balance">
-            {HERO_CONTENT.title}
+          <h1 className="text-[36px] lg:text-[60px] font-semibold text-white leading-[1.08] tracking-[-0.01em] mb-6 text-balance">
+            {HERO_CONTENT.titleMain}
+            <span className="block text-[#EF4444] mt-1.5">
+              {HERO_CONTENT.titleHighlight}
+            </span>
           </h1>
 
-          <p className="text-base sm:text-xl text-slate-300 mb-9 leading-relaxed max-w-2xl">
+          <p className="text-[16px] lg:text-[17px] leading-[1.65] text-[#CBD5E1] mb-9 max-w-[65ch]">
             {HERO_CONTENT.subtitle}
           </p>
 
@@ -41,7 +42,7 @@ export const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick('hero')}
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-4 min-h-[48px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors shadow-lg whitespace-nowrap shrink-0 text-sm sm:text-base"
+              className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 min-h-[52px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors shadow-lg whitespace-nowrap shrink-0 text-[16px]"
             >
               <span>{HERO_CONTENT.primaryCta}</span>
               <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -49,16 +50,21 @@ export const Hero: React.FC = () => {
 
             <a
               href="#ebook"
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-4 min-h-[48px] bg-white/5 text-white font-semibold rounded-xl border border-white/25 hover:bg-white/10 transition-colors whitespace-nowrap shrink-0 text-sm sm:text-base"
+              className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 min-h-[52px] bg-white/5 text-white font-semibold rounded-xl border border-white/25 hover:bg-white/10 transition-colors whitespace-nowrap shrink-0 text-[16px]"
             >
               <BookOpen className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>{HERO_CONTENT.secondaryCta}</span>
             </a>
           </div>
 
-          <p className="mt-6 text-sm text-slate-300 leading-relaxed">
-            {HERO_CONTENT.supportLine}
-          </p>
+          <ul className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px] sm:text-[15px] text-[#CBD5E1]">
+            {HERO_CONTENT.supportItems.map((item, idx) => (
+              <li key={idx} className="inline-flex items-center gap-1.5">
+                <Check className="w-4 h-4 text-[#EF4444] shrink-0" aria-hidden="true" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

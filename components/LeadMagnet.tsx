@@ -85,29 +85,32 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
       <div className="container mx-auto px-5 sm:px-6 max-w-6xl">
         <div className="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 shadow-xl">
           <div className="flex flex-col lg:flex-row items-stretch">
-            <div className="lg:w-1/2 p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
-              <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#e06c65] mb-5">
-                <BookOpen className="w-4 h-4 shrink-0" aria-hidden="true" />
-                <span>{EBOOK_CONTENT.badge}</span>
-              </p>
+            <div className="lg:w-1/2 p-7 sm:p-12 lg:p-14 flex flex-col justify-center">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <BookOpen className="w-4 h-4 text-[#F87171] shrink-0" aria-hidden="true" />
+                <p className="eyebrow-dark">{EBOOK_CONTENT.eyebrow}</p>
+              </div>
 
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight text-balance">
+              <h2 className="text-[30px] lg:text-[40px] font-semibold text-white mb-5 leading-[1.15] tracking-[-0.01em] text-balance">
                 {EBOOK_CONTENT.title}
               </h2>
 
-              <p className="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+              <p className="text-[16px] lg:text-[17px] leading-[1.65] text-[#CBD5E1] mb-8 max-w-[65ch]">
                 {EBOOK_CONTENT.description}
               </p>
 
-              <p className="text-sm font-semibold uppercase tracking-wider text-slate-200 mb-4">
+              <p className="font-sans text-[15px] font-semibold text-white mb-4">
                 {EBOOK_CONTENT.listTitle}
               </p>
 
               <ul className="space-y-3.5">
                 {EBOOK_CONTENT.items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-200 text-[15px]">
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-[#CBD5E1] text-[16px] lg:text-[17px] leading-[1.55]"
+                  >
                     <CheckCircle
-                      className="w-5 h-5 text-[#d9534f] shrink-0 mt-0.5"
+                      className="w-5 h-5 text-[#EF4444] shrink-0 mt-1"
                       aria-hidden="true"
                     />
                     <span>{item}</span>
@@ -116,10 +119,10 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
               </ul>
             </div>
 
-            <div className="lg:w-1/2 bg-slate-800/60 p-8 sm:p-12 lg:p-14 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/10">
+            <div className="lg:w-1/2 bg-slate-800/60 p-7 sm:p-12 lg:p-14 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/10">
               {!isConverted ? (
                 <div className="max-w-md mx-auto w-full">
-                  <h3 className="text-2xl font-bold text-white mb-6">
+                  <h3 className="font-sans font-semibold text-[19px] text-white mb-6">
                     {EBOOK_CONTENT.formTitle}
                   </h3>
 
@@ -142,7 +145,7 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
                     <div>
                       <label
                         htmlFor="ebook-nome"
-                        className="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-1.5"
+                        className="block font-sans font-semibold text-[13px] text-slate-200 mb-1.5"
                       >
                         Nome *
                       </label>
@@ -154,14 +157,14 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
                         value={nome}
                         onChange={(e) => setNome(e.target.value)}
                         placeholder="Seu nome completo"
-                        className="w-full px-4 py-3.5 min-h-[46px] bg-slate-900 border border-slate-700 rounded-xl text-white placeholder:text-slate-400 focus:border-[#912018] focus:outline-none text-sm sm:text-base"
+                        className="w-full px-4 py-3.5 min-h-[48px] bg-slate-900 border border-slate-700 rounded-xl text-white placeholder:text-slate-400 focus:border-[#912018] focus:outline-none text-[16px]"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="ebook-whatsapp"
-                        className="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-1.5"
+                        className="block font-sans font-semibold text-[13px] text-slate-200 mb-1.5"
                       >
                         WhatsApp *
                       </label>
@@ -174,14 +177,14 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
                         value={whatsapp}
                         onChange={(e) => setWhatsapp(formatWhatsAppMask(e.target.value))}
                         placeholder="(84) 90000-0000"
-                        className="w-full px-4 py-3.5 min-h-[46px] bg-slate-900 border border-slate-700 rounded-xl text-white placeholder:text-slate-400 focus:border-[#912018] focus:outline-none text-sm sm:text-base"
+                        className="w-full px-4 py-3.5 min-h-[48px] bg-slate-900 border border-slate-700 rounded-xl text-white placeholder:text-slate-400 focus:border-[#912018] focus:outline-none text-[16px]"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="ebook-email"
-                        className="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-1.5"
+                        className="block font-sans font-semibold text-[13px] text-slate-200 mb-1.5"
                       >
                         E-mail *
                       </label>
@@ -193,14 +196,14 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="seu@email.com"
-                        className="w-full px-4 py-3.5 min-h-[46px] bg-slate-900 border border-slate-700 rounded-xl text-white placeholder:text-slate-400 focus:border-[#912018] focus:outline-none text-sm sm:text-base"
+                        className="w-full px-4 py-3.5 min-h-[48px] bg-slate-900 border border-slate-700 rounded-xl text-white placeholder:text-slate-400 focus:border-[#912018] focus:outline-none text-[16px]"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="ebook-perfil"
-                        className="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-1.5"
+                        className="block font-sans font-semibold text-[13px] text-slate-200 mb-1.5"
                       >
                         Você é *
                       </label>
@@ -210,7 +213,7 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
                         required
                         value={perfil}
                         onChange={(e) => setPerfil(e.target.value)}
-                        className="w-full px-4 py-3.5 min-h-[46px] bg-slate-900 border border-slate-700 rounded-xl text-white focus:border-[#912018] focus:outline-none text-sm sm:text-base"
+                        className="w-full px-4 py-3.5 min-h-[48px] bg-slate-900 border border-slate-700 rounded-xl text-white focus:border-[#912018] focus:outline-none text-[16px]"
                       >
                         <option value="" disabled>
                           Selecione uma opção
@@ -235,7 +238,7 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
                       />
                       <label
                         htmlFor="ebook-consent"
-                        className="text-xs sm:text-sm text-slate-300 leading-relaxed"
+                        className="text-[13px] text-[#CBD5E1] leading-relaxed"
                       >
                         {EBOOK_CONTENT.consentText}{' '}
                         <button
@@ -252,7 +255,7 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
                     {errorMsg && (
                       <div
                         role="alert"
-                        className="p-3.5 rounded-xl bg-red-950/70 border border-red-400/40 text-red-100 text-xs sm:text-sm flex items-start gap-2.5"
+                        className="p-3.5 rounded-xl bg-red-950/70 border border-red-400/40 text-red-100 text-[14px] flex items-start gap-2.5"
                       >
                         <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
                         <div>
@@ -273,7 +276,7 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-4 px-6 min-h-[48px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors flex items-center justify-center gap-2.5 shadow-lg disabled:opacity-70 text-sm sm:text-base"
+                      className="w-full py-3.5 px-6 min-h-[52px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors flex items-center justify-center gap-2.5 shadow-lg disabled:opacity-70 text-[16px]"
                     >
                       {loading ? (
                         <>
@@ -288,7 +291,7 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
                       )}
                     </button>
 
-                    <p className="text-xs text-slate-400 text-center flex items-center justify-center gap-1.5 pt-1">
+                    <p className="text-[13px] text-slate-300 text-center flex items-center justify-center gap-1.5 pt-1 leading-relaxed">
                       <Lock className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                       <span>{EBOOK_CONTENT.microtext}</span>
                     </p>
@@ -297,12 +300,12 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
               ) : (
                 <div className="max-w-md mx-auto w-full text-center py-6">
                   <div className="w-16 h-16 bg-[#912018]/20 rounded-full flex items-center justify-center mx-auto mb-5">
-                    <CheckCircle className="w-9 h-9 text-[#d9534f]" aria-hidden="true" />
+                    <CheckCircle className="w-9 h-9 text-[#EF4444]" aria-hidden="true" />
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                  <h3 className="font-sans font-semibold text-[22px] text-white mb-3">
                     {EBOOK_CONTENT.thankYou.title}
                   </h3>
-                  <p className="text-slate-300 mb-8 leading-relaxed">
+                  <p className="text-[16px] lg:text-[17px] leading-[1.65] text-[#CBD5E1] mb-8">
                     {EBOOK_CONTENT.thankYou.text}
                   </p>
                   <div className="flex flex-col gap-3">
@@ -311,7 +314,7 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       download
-                      className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 min-h-[48px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors text-sm sm:text-base"
+                      className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 min-h-[52px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors text-[16px]"
                     >
                       <Download className="w-4 h-4 shrink-0" aria-hidden="true" />
                       <span>{EBOOK_CONTENT.thankYou.downloadLabel}</span>
@@ -321,7 +324,7 @@ export const LeadMagnet: React.FC<LeadMagnetProps> = ({ onOpenPrivacy }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackWhatsAppClick('ebook_obrigado')}
-                      className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 min-h-[48px] bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:bg-white/15 transition-colors text-sm sm:text-base"
+                      className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 min-h-[52px] bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:bg-white/15 transition-colors text-[16px]"
                     >
                       <span>{EBOOK_CONTENT.thankYou.whatsappLabel}</span>
                       <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />

@@ -108,14 +108,15 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
       <div className="container mx-auto px-5 sm:px-6 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           <div className="lg:w-5/12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white text-balance">
+            <p className="eyebrow-dark mb-3">{CONTACT_CONTENT.eyebrow}</p>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold mb-4 text-white leading-[1.15] tracking-[-0.01em] text-balance">
               {CONTACT_CONTENT.title}
             </h2>
-            <p className="text-slate-300 mb-10 text-base sm:text-lg leading-relaxed">
+            <p className="text-[#CBD5E1] mb-10 text-[16px] lg:text-[17px] leading-[1.65] max-w-[65ch]">
               {CONTACT_CONTENT.description}
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-5">
               <a
                 href={getWhatsAppUrl()}
                 target="_blank"
@@ -124,13 +125,13 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                 className="flex items-start gap-4 group rounded-2xl p-4 bg-white/5 border border-white/10 hover:border-[#912018]/60 transition-colors"
               >
                 <div className="w-11 h-11 bg-[#912018]/20 rounded-xl flex items-center justify-center shrink-0">
-                  <Phone className="w-5 h-5 text-[#e06c65]" aria-hidden="true" />
+                  <Phone className="w-5 h-5 text-[#F87171]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 mb-0.5">
+                  <p className="font-sans text-[13px] font-semibold text-slate-300 mb-0.5">
                     WhatsApp
                   </p>
-                  <p className="text-base sm:text-lg font-semibold text-white group-hover:underline">
+                  <p className="text-[16px] lg:text-[17px] font-semibold text-white group-hover:underline">
                     {SITE_CONFIG.CONTACT_INFO.whatsappDisplay}
                   </p>
                 </div>
@@ -141,13 +142,13 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                 className="flex items-start gap-4 group rounded-2xl p-4 bg-white/5 border border-white/10 hover:border-[#912018]/60 transition-colors"
               >
                 <div className="w-11 h-11 bg-[#912018]/20 rounded-xl flex items-center justify-center shrink-0">
-                  <Mail className="w-5 h-5 text-[#e06c65]" aria-hidden="true" />
+                  <Mail className="w-5 h-5 text-[#F87171]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 mb-0.5">
+                  <p className="font-sans text-[13px] font-semibold text-slate-300 mb-0.5">
                     E-mail
                   </p>
-                  <p className="text-base sm:text-lg font-semibold text-white group-hover:underline break-all">
+                  <p className="text-[16px] lg:text-[17px] font-semibold text-white group-hover:underline break-all">
                     {SITE_CONFIG.CONTACT_INFO.email}
                   </p>
                 </div>
@@ -160,13 +161,13 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                 className="flex items-start gap-4 group rounded-2xl p-4 bg-white/5 border border-white/10 hover:border-[#912018]/60 transition-colors"
               >
                 <div className="w-11 h-11 bg-[#912018]/20 rounded-xl flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5 text-[#e06c65]" aria-hidden="true" />
+                  <MapPin className="w-5 h-5 text-[#F87171]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 mb-0.5">
+                  <p className="font-sans text-[13px] font-semibold text-slate-300 mb-0.5">
                     Endereço
                   </p>
-                  <p className="text-sm sm:text-base font-medium text-white group-hover:underline leading-relaxed">
+                  <p className="text-[15px] lg:text-[16px] font-medium text-white group-hover:underline leading-[1.55]">
                     {SITE_CONFIG.CONTACT_INFO.address}
                   </p>
                 </div>
@@ -174,13 +175,13 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
 
               <div className="flex items-start gap-4 rounded-2xl p-4 bg-white/5 border border-white/10">
                 <div className="w-11 h-11 bg-[#912018]/20 rounded-xl flex items-center justify-center shrink-0">
-                  <Clock className="w-5 h-5 text-[#e06c65]" aria-hidden="true" />
+                  <Clock className="w-5 h-5 text-[#F87171]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-slate-400 mb-0.5">
+                  <p className="font-sans text-[13px] font-semibold text-slate-300 mb-0.5">
                     Horário de atendimento
                   </p>
-                  <p className="text-sm sm:text-base font-medium text-slate-200 leading-relaxed">
+                  <p className="text-[15px] lg:text-[16px] font-medium text-[#CBD5E1] leading-[1.55]">
                     {SITE_CONFIG.CONTACT_INFO.hours}
                   </p>
                 </div>
@@ -195,10 +196,10 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                   <div className="w-16 h-16 bg-[#912018]/10 rounded-full flex items-center justify-center mx-auto mb-5">
                     <CheckCircle className="w-9 h-9 text-[#912018]" aria-hidden="true" />
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+                  <h3 className="font-sans font-semibold text-[22px] text-slate-900 mb-3">
                     {CONTACT_CONTENT.thankYou.title}
                   </h3>
-                  <p className="text-slate-600 mb-8 max-w-md mx-auto leading-relaxed">
+                  <p className="text-[16px] lg:text-[17px] leading-[1.65] text-[#334155] mb-8 max-w-md mx-auto">
                     {CONTACT_CONTENT.thankYou.text}
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -207,7 +208,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackWhatsAppClick('contato_obrigado')}
-                      className="inline-flex items-center justify-center gap-2.5 px-7 py-4 min-h-[48px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors w-full sm:w-auto"
+                      className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 min-h-[52px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors text-[16px] w-full sm:w-auto"
                     >
                       <span>{CONTACT_CONTENT.thankYou.whatsappLabel}</span>
                       <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -215,7 +216,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                     <button
                       type="button"
                       onClick={() => setSubmitted(false)}
-                      className="text-sm font-semibold text-slate-600 hover:text-slate-900 underline py-2"
+                      className="text-[15px] font-semibold text-[#334155] hover:text-slate-900 underline py-2"
                     >
                       Enviar outra mensagem
                     </button>
@@ -242,7 +243,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                     <div>
                       <label
                         htmlFor="contato-nome"
-                        className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5"
+                        className="block font-sans font-semibold text-[13px] text-slate-800 mb-1.5"
                       >
                         Nome *
                       </label>
@@ -254,14 +255,14 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                         value={nome}
                         onChange={(e) => setNome(e.target.value)}
                         placeholder="Seu nome completo"
-                        className="w-full px-4 py-3.5 min-h-[46px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-sm sm:text-base"
+                        className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-[16px]"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="contato-whatsapp"
-                        className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5"
+                        className="block font-sans font-semibold text-[13px] text-slate-800 mb-1.5"
                       >
                         WhatsApp *
                       </label>
@@ -274,7 +275,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                         value={whatsapp}
                         onChange={(e) => setWhatsapp(formatWhatsAppMask(e.target.value))}
                         placeholder="(84) 90000-0000"
-                        className="w-full px-4 py-3.5 min-h-[46px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-sm sm:text-base"
+                        className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-[16px]"
                       />
                     </div>
                   </div>
@@ -283,7 +284,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                     <div>
                       <label
                         htmlFor="contato-email"
-                        className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5"
+                        className="block font-sans font-semibold text-[13px] text-slate-800 mb-1.5"
                       >
                         E-mail
                       </label>
@@ -294,14 +295,14 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="seu@email.com"
-                        className="w-full px-4 py-3.5 min-h-[46px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-sm sm:text-base"
+                        className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-[16px]"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="contato-condominio"
-                        className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5"
+                        className="block font-sans font-semibold text-[13px] text-slate-800 mb-1.5"
                       >
                         Nome ou bairro do condomínio *
                       </label>
@@ -313,7 +314,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                         value={condominio}
                         onChange={(e) => setCondominio(e.target.value)}
                         placeholder="Ex: Condomínio Solar / Petrópolis"
-                        className="w-full px-4 py-3.5 min-h-[46px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-sm sm:text-base"
+                        className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-[16px]"
                       />
                     </div>
                   </div>
@@ -322,7 +323,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                     <div>
                       <label
                         htmlFor="contato-cidade"
-                        className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5"
+                        className="block font-sans font-semibold text-[13px] text-slate-800 mb-1.5"
                       >
                         Cidade/UF *
                       </label>
@@ -334,14 +335,14 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                         value={cidadeUf}
                         onChange={(e) => setCidadeUf(e.target.value)}
                         placeholder="Ex: Natal/RN"
-                        className="w-full px-4 py-3.5 min-h-[46px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-sm sm:text-base"
+                        className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-[16px]"
                       />
                     </div>
 
                     <div>
                       <label
                         htmlFor="contato-unidades"
-                        className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5"
+                        className="block font-sans font-semibold text-[13px] text-slate-800 mb-1.5"
                       >
                         Nº de unidades
                       </label>
@@ -350,7 +351,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                         name="unidades"
                         value={unidades}
                         onChange={(e) => setUnidades(e.target.value)}
-                        className="w-full px-4 py-3.5 min-h-[46px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-sm sm:text-base"
+                        className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-[16px]"
                       >
                         <option value="">Selecione</option>
                         {CONTACT_CONTENT.unitOptions.map((opt) => (
@@ -365,7 +366,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                   <div>
                     <label
                       htmlFor="contato-assunto"
-                      className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5"
+                      className="block font-sans font-semibold text-[13px] text-slate-800 mb-1.5"
                     >
                       Assunto principal *
                     </label>
@@ -375,7 +376,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                       required
                       value={assunto}
                       onChange={(e) => setAssunto(e.target.value)}
-                      className="w-full px-4 py-3.5 min-h-[46px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-sm sm:text-base"
+                      className="w-full px-4 py-3.5 min-h-[48px] bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-[16px]"
                     >
                       <option value="" disabled>
                         Selecione o assunto
@@ -391,7 +392,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                   <div>
                     <label
                       htmlFor="contato-mensagem"
-                      className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1.5"
+                      className="block font-sans font-semibold text-[13px] text-slate-800 mb-1.5"
                     >
                       Mensagem
                     </label>
@@ -402,7 +403,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                       value={mensagem}
                       onChange={(e) => setMensagem(e.target.value)}
                       placeholder="Conte brevemente a situação do condomínio"
-                      className="w-full px-4 py-3.5 bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-sm sm:text-base"
+                      className="w-full px-4 py-3.5 bg-slate-50 border border-slate-300 rounded-xl focus:border-[#912018] focus:outline-none text-slate-900 text-[16px]"
                     />
                   </div>
 
@@ -418,7 +419,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                     />
                     <label
                       htmlFor="contato-consent"
-                      className="text-xs sm:text-sm text-slate-700 leading-relaxed"
+                      className="text-[13px] text-[#334155] leading-relaxed"
                     >
                       Li e concordo com a{' '}
                       <button
@@ -435,7 +436,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                   {errorMsg && (
                     <div
                       role="alert"
-                      className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-900 text-xs sm:text-sm flex items-start gap-2.5"
+                      className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-900 text-[14px] flex items-start gap-2.5"
                     >
                       <AlertCircle className="w-4 h-4 text-[#912018] shrink-0 mt-0.5" aria-hidden="true" />
                       <div>
@@ -456,7 +457,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 px-6 min-h-[48px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors flex items-center justify-center gap-2.5 shadow-md disabled:opacity-70 text-sm sm:text-base"
+                    className="w-full py-3.5 px-6 min-h-[52px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors flex items-center justify-center gap-2.5 shadow-md disabled:opacity-70 text-[16px]"
                   >
                     {loading ? (
                       <>
@@ -471,8 +472,8 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                     )}
                   </button>
 
-                  <p className="text-xs sm:text-sm text-slate-600 text-center pt-1">
-                    Ou, se preferir,{' '}
+                  <p className="text-[14px] text-[#334155] text-center pt-1">
+                    Prefere conversar agora?{' '}
                     <a
                       href={getWhatsAppUrl()}
                       target="_blank"
@@ -480,7 +481,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenPrivacy }) => {
                       onClick={() => trackWhatsAppClick('contato_microtexto')}
                       className="font-semibold text-[#912018] underline hover:text-[#451F19]"
                     >
-                      fale agora pelo WhatsApp
+                      Fale pelo WhatsApp
                     </a>
                     .
                   </p>

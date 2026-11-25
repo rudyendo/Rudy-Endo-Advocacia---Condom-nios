@@ -34,7 +34,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
         <div className="flex items-start justify-between gap-4 mb-5">
           <h2
             id="privacy-modal-title"
-            className="text-2xl font-bold text-slate-900"
+            className="text-[30px] lg:text-[36px] font-semibold leading-[1.15] tracking-[-0.01em] text-slate-900"
           >
             {PRIVACY_POLICY_CONTENT.title}
           </h2>
@@ -48,7 +48,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
           </button>
         </div>
 
-        <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
+        <p className="text-[#334155] leading-[1.65] text-[16px] lg:text-[17px]">
           {PRIVACY_POLICY_CONTENT.text}
         </p>
 
@@ -56,7 +56,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
           <button
             type="button"
             onClick={onClose}
-            className="px-6 py-2.5 min-h-[42px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors text-sm"
+            className="px-6 py-3 min-h-[52px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors text-[16px]"
           >
             Fechar
           </button>

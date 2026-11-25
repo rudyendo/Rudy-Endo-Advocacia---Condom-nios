@@ -89,7 +89,7 @@ const App: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick('menu')}
-              className="px-5 py-2.5 min-h-[42px] inline-flex items-center justify-center bg-[#912018] text-white text-sm font-semibold rounded-xl hover:bg-[#451F19] transition-colors shadow-sm whitespace-nowrap shrink-0"
+              className="px-5 py-3 min-h-[52px] inline-flex items-center justify-center bg-[#912018] text-white text-[16px] font-semibold rounded-xl hover:bg-[#451F19] transition-colors shadow-sm whitespace-nowrap shrink-0"
             >
               {NAVIGATION.ctaLabel}
             </a>
@@ -125,7 +125,7 @@ const App: React.FC = () => {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="py-3.5 px-3 text-slate-900 font-semibold rounded-xl hover:bg-slate-50 border-b border-slate-100 last:border-b-0 min-h-[44px] flex items-center"
+                  className="py-3.5 px-3 text-slate-900 font-semibold text-[16px] rounded-xl hover:bg-slate-50 border-b border-slate-100 last:border-b-0 min-h-[44px] flex items-center"
                 >
                   {link.label}
                 </a>
@@ -138,7 +138,7 @@ const App: React.FC = () => {
                   trackWhatsAppClick('menu_mobile');
                   setMobileMenuOpen(false);
                 }}
-                className="mt-3 py-3.5 px-5 min-h-[48px] bg-[#912018] text-white font-semibold rounded-xl hover:bg-[#451F19] transition-colors text-center"
+                className="mt-3 py-3.5 px-5 min-h-[52px] inline-flex items-center justify-center bg-[#912018] text-white font-semibold text-[16px] rounded-xl hover:bg-[#451F19] transition-colors text-center"
               >
                 {NAVIGATION.ctaLabel}
               </a>
@@ -160,13 +160,13 @@ const App: React.FC = () => {
         <Contact onOpenPrivacy={() => setPrivacyOpen(true)} />
       </main>
 
-      <footer className="bg-[#1A1A1A] text-slate-300 py-14 border-t border-white/10">
+      <footer className="bg-[#1A1A1A] text-[#CBD5E1] py-14 border-t border-white/10">
         <div className="container mx-auto px-5 sm:px-6 max-w-6xl">
           <div className="flex flex-col items-center text-center gap-4">
             <BrandLogo variant="light" />
 
-            <div className="space-y-1.5 text-xs sm:text-sm text-slate-300 max-w-3xl mt-2">
-              <p className="font-medium text-white">{FOOTER_CONTENT.societyLine}</p>
+            <div className="space-y-1.5 text-[14px] text-[#CBD5E1] max-w-3xl mt-2 leading-relaxed">
+              <p className="font-semibold text-white">{FOOTER_CONTENT.societyLine}</p>
               <p>{FOOTER_CONTENT.lawyerLine}</p>
               <p>
                 <a
@@ -206,7 +206,7 @@ const App: React.FC = () => {
               </p>
             </div>
 
-            <p className="text-slate-400 text-xs max-w-2xl pt-4 border-t border-white/10 w-full leading-relaxed">
+            <p className="text-[#CBD5E1]/80 text-[13px] max-w-2xl pt-4 border-t border-white/10 w-full leading-relaxed">
               {FOOTER_CONTENT.legalNote}
             </p>
           </div>

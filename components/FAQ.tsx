@@ -13,7 +13,8 @@ export const FAQ: React.FC = () => {
     <section id="duvidas" className="py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-5 sm:px-6 max-w-4xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 text-balance">
+          <p className="eyebrow-light mb-3">{FAQ_CONTENT.eyebrow}</p>
+          <h2 className="text-[30px] lg:text-[40px] font-semibold text-slate-900 leading-[1.15] tracking-[-0.01em] mb-4 text-balance">
             {FAQ_CONTENT.title}
           </h2>
           <div className="w-16 h-1 bg-[#912018] mx-auto" />
@@ -39,7 +40,7 @@ export const FAQ: React.FC = () => {
                     onClick={() => toggle(index)}
                     className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-100/70 transition-colors min-h-[56px]"
                   >
-                    <span className="font-sans text-base sm:text-lg font-semibold text-slate-900">
+                    <span className="font-sans text-[18px] font-semibold text-slate-900 leading-snug">
                       {item.question}
                     </span>
                     <ChevronDown
@@ -55,9 +56,9 @@ export const FAQ: React.FC = () => {
                     id={panelId}
                     role="region"
                     aria-labelledby={buttonId}
-                    className="px-6 pb-5 pt-1 text-slate-700 leading-relaxed text-[15px] sm:text-base border-t border-slate-200/70 bg-white"
+                    className="px-6 pb-5 pt-3 text-[#334155] leading-[1.65] text-[16px] lg:text-[17px] border-t border-slate-200/70 bg-white"
                   >
-                    {item.answer}
+                    <p className="max-w-[65ch]">{item.answer}</p>
                   </div>
                 )}
               </div>

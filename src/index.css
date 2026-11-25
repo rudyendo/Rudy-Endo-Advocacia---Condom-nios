@@ -11,22 +11,71 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    hyphens: none;
+    -webkit-hyphens: none;
   }
 
   body {
     font-family: var(--font-sans);
     background-color: #f8fafc;
-    color: #0f172a;
+    color: #334155;
+    hyphens: none;
+    -webkit-hyphens: none;
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, .font-serif {
+  h1, h2 {
     font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
   }
 
   :focus-visible {
     outline: 2px solid #912018;
     outline-offset: 2px;
+  }
+}
+
+.font-num {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.eyebrow-light {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #912018;
+}
+
+@media (min-width: 640px) {
+  .eyebrow-light {
+    font-size: 0.8125rem;
+  }
+}
+
+.eyebrow-dark {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #f87171;
+}
+
+@media (min-width: 640px) {
+  .eyebrow-dark {
+    font-size: 0.8125rem;
   }
 }
 
