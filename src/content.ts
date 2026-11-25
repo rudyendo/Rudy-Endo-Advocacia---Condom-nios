@@ -33,7 +33,7 @@ export const SITE_CONFIG = {
     whatsappDisplay: '(84) 99834-7202',
     whatsappPrefilledMessage:
       'Olá, Dr. Rudy! Sou síndico(a) de um condomínio e gostaria de conversar sobre uma questão jurídica.',
-    email: 'rudy@rudyendo.adv.br',
+    email: 'contato@rudyendo.adv.br',
     privacyEmail: 'contato@rudyendo.adv.br',
     address:
       'Rua Desembargador Régulo Tinôco, 1293-B, Sala 02 — Barro Vermelho, Natal/RN — CEP 59022-080',
